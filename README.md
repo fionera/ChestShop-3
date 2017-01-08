@@ -1,7 +1,7 @@
 ChestShop
 ================================
 
-My fork of ChestShop. Downloads can be found here: [http://ci.dmulloy2.net/job/ChestShop](http://ci.dmulloy2.net/job/ChestShop)
+My fork of ChestShop.
 
 ChestShop is an awesome plugin for managing your server's economy. 
 By using chests and signs, you can effectively create your own market!
@@ -26,8 +26,3 @@ To build ChestShop, you'll need a Maven installation.
 #### Installing external dependencies
 
 To install external dependencies, place your .jar into the main folder and launch the `install_dependency_to_repo.sh` script - it'll guide you through the process.
-
-
-Links
---------------------------------
-* [Downloads](http://ci.dmulloy2.net/job/ChestShop)
