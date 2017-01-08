@@ -2,10 +2,8 @@ package com.Acrobot.ChestShop.Utils;
 
 import com.Acrobot.Breeze.Utils.BlockUtil;
 import com.Acrobot.ChestShop.Signs.ChestShopSign;
-import org.bukkit.block.Block;
-import org.bukkit.block.BlockFace;
-import org.bukkit.block.Chest;
-import org.bukkit.block.Sign;
+import org.bukkit.block.*;
+import org.bukkit.inventory.InventoryHolder;
 
 /**
  * @author Acrobot
@@ -39,16 +37,16 @@ public class uBlock {
         return null;
     }
 
-    public static Chest findConnectedChest(Sign sign) {
+    public static InventoryHolder findConnectedChest(Sign sign) {
         Block block = sign.getBlock();
         return findConnectedChest(block);
     }
 
-    public static Chest findConnectedChest(Block block) {
+    public static InventoryHolder findConnectedChest(Block block) {
         for (BlockFace bf : SHOP_FACES) {
             Block faceBlock = block.getRelative(bf);
             if (BlockUtil.isChest(faceBlock)) {
-                return (Chest) faceBlock.getState();
+                return (InventoryHolder) faceBlock.getState();
             }
         }
         return null;

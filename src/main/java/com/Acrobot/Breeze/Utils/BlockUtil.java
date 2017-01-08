@@ -1,10 +1,7 @@
 package com.Acrobot.Breeze.Utils;
 
 import org.bukkit.Material;
-import org.bukkit.block.Block;
-import org.bukkit.block.Chest;
-import org.bukkit.block.DoubleChest;
-import org.bukkit.block.Sign;
+import org.bukkit.block.*;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
@@ -32,7 +29,7 @@ public class BlockUtil {
      * @return Is this block a chest?
      */
     public static boolean isChest(Block block) {
-        return block.getState() instanceof Chest;
+        return block.getState() instanceof Chest || block.getState() instanceof ShulkerBox;
     }
 
     /**
@@ -42,7 +39,7 @@ public class BlockUtil {
      * @return Is this holder a chest?
      */
     public static boolean isChest(InventoryHolder holder) {
-        return holder instanceof Chest || holder instanceof DoubleChest;
+        return holder instanceof Chest || holder instanceof DoubleChest || holder instanceof ShulkerBox;
     }
 
     /**

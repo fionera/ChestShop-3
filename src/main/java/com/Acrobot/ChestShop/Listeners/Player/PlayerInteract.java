@@ -27,6 +27,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.UUID;
@@ -129,7 +130,7 @@ public class PlayerInteract implements Listener {
         Action buy = Properties.REVERSE_BUTTONS ? LEFT_CLICK_BLOCK : RIGHT_CLICK_BLOCK;
         double price = (action == buy ? PriceUtil.getBuyPrice(prices) : PriceUtil.getSellPrice(prices));
 
-        Chest chest = uBlock.findConnectedChest(sign);
+        InventoryHolder chest = uBlock.findConnectedChest(sign);
         Inventory ownerInventory = (ChestShopSign.isAdminShop(sign) ? new AdminInventory() : chest != null ? chest.getInventory() : null);
 
         ItemStack item = MaterialUtil.getItem(material);
@@ -186,7 +187,7 @@ public class PlayerInteract implements Listener {
     }
 
     private static void showChestGUI(Player player, Block signBlock) {
-        Chest chest = uBlock.findConnectedChest(signBlock);
+        InventoryHolder chest = uBlock.findConnectedChest(signBlock);
 
         if (chest == null) {
             player.sendMessage(Messages.prefix(Messages.NO_CHEST_DETECTED));

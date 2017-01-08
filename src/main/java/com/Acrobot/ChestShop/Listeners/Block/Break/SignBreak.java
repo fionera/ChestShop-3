@@ -20,6 +20,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.*;
 import org.bukkit.event.entity.EntityExplodeEvent;
+import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.material.Directional;
 import org.bukkit.material.PistonBaseMaterial;
 import org.bukkit.metadata.FixedMetadataValue;
@@ -153,7 +154,7 @@ public class SignBreak implements Listener {
     }
 
     private static void sendShopDestroyedEvent(Sign sign, Player player) {
-        Chest connectedChest = null;
+        InventoryHolder connectedChest = null;
 
         if (!ChestShopSign.isAdminShop(sign)) {
             connectedChest = uBlock.findConnectedChest(sign.getBlock());

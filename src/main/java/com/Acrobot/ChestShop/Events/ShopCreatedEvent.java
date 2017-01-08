@@ -5,6 +5,7 @@ import org.bukkit.block.Sign;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
+import org.bukkit.inventory.InventoryHolder;
 
 import javax.annotation.Nullable;
 
@@ -20,9 +21,9 @@ public class ShopCreatedEvent extends Event {
 
     private final Sign sign;
     private final String[] signLines;
-    @Nullable private final Chest chest;
+    @Nullable private final InventoryHolder chest;
 
-    public ShopCreatedEvent(Player creator, Sign sign, @Nullable Chest chest, String[] signLines) {
+    public ShopCreatedEvent(Player creator, Sign sign, @Nullable InventoryHolder chest, String[] signLines) {
         this.creator = creator;
         this.sign = sign;
         this.chest = chest;
@@ -71,7 +72,7 @@ public class ShopCreatedEvent extends Event {
      *
      * @return Shop's chest
      */
-    @Nullable public Chest getChest() {
+    @Nullable public InventoryHolder getChest() {
         return chest;
     }
 
